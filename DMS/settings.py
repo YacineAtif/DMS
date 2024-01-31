@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -24,7 +25,7 @@ SECRET_KEY = 'django-insecure-vz(0#9a*ds+f^ui#)zp^864)3_0&4z!9o0#r%@g2%^u@jd#wjv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['simulate.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -48,6 +49,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # ... other middleware ...
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # ... other middleware ...
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
