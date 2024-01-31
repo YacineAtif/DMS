@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91aaf243-c1b8-40bb-b285-b7e0f0b0af40" name="Changes" comment="" />
+    <list default="true" id="91aaf243-c1b8-40bb-b285-b7e0f0b0af40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/I2Connect/templates/I2Connect/traffic_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/I2Connect/templates/I2Connect/traffic_template.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
