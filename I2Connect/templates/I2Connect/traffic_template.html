@@ -25,7 +25,15 @@
 
     <script type="text/javascript">
 
-    const trafficSocket = new WebSocket('ws://localhost:8000/ws/traffic/');
+
+     // Construct the WebSocket URL based on the current location
+    const wsScheme = window.location.protocol === "https:" ? "wss" : "ws";
+    const wsHost = window.location.host; // Host includes hostname and port if applicable
+    const wsPath = "/ws/traffic/";
+
+    const trafficSocket = new WebSocket(`${wsScheme}://${wsHost}${wsPath}`);
+
+    //const trafficSocket = new WebSocket('ws://localhost:8000/ws/traffic/');
 
     trafficSocket.onmessage = function(e) {
         const data = JSON.parse(e.data);
