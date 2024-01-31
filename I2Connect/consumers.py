@@ -45,6 +45,7 @@ class TrafficDataConsumer(AsyncWebsocketConsumer):
         if action == 'start':
             # Logic to start the simulation
             self.keep_running = True
+            self.reset_simulation = True
             asyncio.create_task(self.send_data_loop())
 
         if action == 'pause':
