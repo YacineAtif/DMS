@@ -4,6 +4,7 @@ import asyncio
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from Sensors.traffic_data import get_simulated_traffic_data
+from Sensors.driver_data import get_simulated_driver_state_data
 
 
 class TrafficDataConsumer(AsyncWebsocketConsumer):
@@ -20,13 +21,19 @@ class TrafficDataConsumer(AsyncWebsocketConsumer):
 
     async def send_data_loop(self):
         while self.keep_running:
-            data = get_simulated_traffic_data(reset=self.reset_simulation)  # function to fetch traffic data
+            traffic_data = get_simulated_traffic_data(reset=self.reset_simulation)  # function to fetch traffic data
+            driver_data = get_simulated_driver_state_data(reset=self.reset_simulation)
+
+            combined_data = {
+                'traffic': traffic_data,
+                'driver': driver_data,
+            }
 
             # Once we have reset, set the flag back to False
             if self.reset_simulation:
                 self.reset_simulation = False
 
-            await self.send(text_data=json.dumps(data))
+            await self.send(text_data=json.dumps(combined_data))
             await asyncio.sleep(1)  # Adjust as needed
 
     async def disconnect(self, close_code):

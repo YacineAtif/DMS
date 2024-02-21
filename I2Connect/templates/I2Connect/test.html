@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Traffic Data & Driver State</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .simulation {
+            flex: 1;
+            margin: 0 20px;
+        }
+        #traffic-data-container, #driver-state-container {
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="simulation">
+    <h1>Simulated Traffic Data</h1>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resumeBtn">Resume</button>
+    <!-- <button id="stopBtn">Stop</button> -->
+    <div id="traffic-data-container"></div>
+</div>
+
+<div class="simulation">
+    <h1>Driver State Data</h1>
+    <!-- Buttons for controlling driver state simulation if needed -->
+    <div id="driver-state-container">
+        <!-- Driver state data will be appended here -->
+    </div>
+</div>
+
+<script type="text/javascript">
+    // JavaScript code for handling WebSocket connections and updating both containers
+    // Similar to your existing WebSocket setup for traffic data
+    // Consider adding another WebSocket connection or using AJAX calls for fetching and displaying driver state data
+</script>
+
+</body>
+</html>

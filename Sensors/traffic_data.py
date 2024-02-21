@@ -1,7 +1,8 @@
 import random
-import datetime
 import time
 import math
+from Sensors.timestamp_util import get_current_timestamp
+
 
 # Define a mapping for object types to numerical codes and their typical speed ranges
 object_data = {
@@ -34,8 +35,7 @@ class TrafficObject:
         self.y += math.sin(radian) * distance
 
     def get_data_row(self):
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[
-                    :-3]  # Truncate microseconds to milliseconds
+        timestamp = get_current_timestamp()
         type_code = object_data[self.object_type]["code"]
         # Return formatted data row
         return {

@@ -1,0 +1,208 @@
+/* styles.css */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.simulation {
+    flex: 1;
+    margin-bottom: 70px; /* Height of controls */
+
+}
+
+
+.data-display-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Spacing between tables */
+    padding-top: 10px; /* Space for h1 headings */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.headings-container {
+    padding-top: 50px; /* Adjust based on the height of .controls */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+h1 {
+    font-size: 1.5em;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 10px;
+    background-color: white;
+    z-index: 10; /* Below controls but above table content */
+    padding-left: 10px 0;
+
+    text-align: left;
+}
+
+
+.sticky-header { /* New style for sticky headers */
+    position: fixed;
+    top: 130px; /*  below the h1 heading  */
+    z-index: 1003; /* Ensure visibility above other content */
+    background-color: #f2f2f2; /* Optional background color */
+    padding-top: 20px; /* Adjust padding as needed */
+    border-bottom: 2px solid #ccc; /* Optional border */
+    width: 100%;
+    margin-bottom: 10px
+
+}
+
+.sticky-header th {
+    background-color: #f9f9f9;
+    white-space: nowrap; /* Prevent text wrapping */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,0.4);
+}
+
+/* Targeting the timestamp column specifically for width adjustment */
+.timestamp-header, .timestamp-cell {
+    min-width: 200px; /* Adjust this value based on the typical width of your timestamp data */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-title {
+    position: sticky;
+    top: 60px; /* Adjust based on controls height */
+    b background-color: #f9f9f9;
+    z-index: 5;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.table-container {
+    width: calc(50% - 5px);
+    max-height: 200px;
+
+}
+
+
+
+
+
+th, td {
+    padding: 8px; /* space between columns */
+    border: 1px solid #ddd;
+}
+
+.controls {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Make it span the full width of the viewport */
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+
+}
+
+/* Control Buttons Styling */
+.controls button {
+    margin: 0 5px;
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.controls button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow for depth */
+}
+
+.controls button:active {
+    background-color: #003885; /* Even darker for active state */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow for pressed effect */
+}
+
+.controls button:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.5); /* Custom focus style */
+}
+
+
+.ID-header,{
+    width: 50px;
+}
+
+.timestamp-header {
+    width:auto; /* Timestamps usually require more space */
+    padding-right: 10px;
+}
+
+.X-header {
+    width: 80px;
+    padding-left: 30px;
+}
+
+
+.Y-header {
+    width: 80px;
+    padding-left: 50px;
+}
+
+/* Apply padding to the Speed header */
+.Speed-header {
+    padding-left: 30px; /* Adjust this value to push the header to the right */
+}
+
+/* Ensure the cell under Speed header has the same padding to align correctly */
+.speed-cell {
+    padding-left: 16px; /* Match this value with Speed header's left padding */
+}
+
+
+.type-header{
+    text-align: center;
+    width: auto; /* Adjust the width as necessary */
+    padding: 8px; /* Ensure padding is consistent with other cells */
+}
+
+
+.type-cell {
+    width: auto; /* Adjust the width as necessary */
+    padding-right: 12px; /* Ensure padding is consistent with other cells */
+}
+
+/* General styles for the header and cells of distraction and drowsiness */
+.distraction-header, .distraction-cell,
+.drowsiness-header, .drowsiness-cell {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+/* Additional specific styles for the distraction header */
+.distraction-header {
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Additional specific styles for the drowsiness cell if needed */
+.drowsiness-cell {
+  padding-left: 10px;
+}
+
+

@@ -1,0 +1,125 @@
+/* styles.css */
+
+body {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.simulation {
+    flex: 1;
+    margin: 10px;
+    height: 300px;
+}
+
+.overall-container {
+    display: flex;
+    flex-direction: column; /* Adjust if needed */
+    max-height: calc(100vh - 60px); /* Adjust the height based on your control's actual height */
+}
+
+.data-display-container {
+    display: flex;
+    justify-content: center;
+    max-height: 500px;
+    overflow-y: auto; /* Common scrollbar for both datasets */
+    position: relative;
+}
+
+
+#trafficDataTable, #driverStateDataTable {
+    font-family: monospace;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+h1 {
+    font-size: 1.5em;
+}
+
+th, td {
+    padding: 8px 16px; /* Added space between columns */
+    text-align: center;
+}
+
+/* Targeting the timestamp column specifically for width adjustment */
+.timestamp-header, .timestamp-cell {
+    min-width: 150px; /* Adjust this value based on the typical width of your timestamp data */
+}
+
+.table-header, .table-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.table-row {
+    padding: 5px;
+}
+
+.table-container {
+    display: block;
+}
+
+.controls {
+    position: fixed; /* Fix the position of the controls div */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Align it to the left side of the viewport */
+    width: 100%; /* Make it span the full width of the viewport */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    border-bottom: 1px solid #ccc; /* Optional: Add a border */
+    padding: 10px 0; /* Add some padding for aesthetics */
+    text-align: center; /* Center the buttons */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Control Buttons Styling */
+.controls button {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.controls button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow for depth */
+}
+
+.controls button:active {
+    background-color: #003885; /* Even darker for active state */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow for pressed effect */
+}
+
+.controls button:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.5); /* Custom focus style */
+}
+
+
+.type-cell {
+    text-align: center;
+}
+
+
+/* Style for the headings */
+.simulation h1 {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: white; /* Match your background */
+    z-index: 10; /* Ensure it's above other content */
+    margin-top: 0; /* Remove any default margin */
+    padding: 10px 0; /* Add some padding for aesthetics */
+    border-bottom: 1px solid #ccc; /* Optional: adds a line below the heading */
+}
