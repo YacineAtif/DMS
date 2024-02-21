@@ -98,6 +98,23 @@
         console.error('Webpage closed: Traffic socket closed unexpectedly');
     };
 
+    function clearAndResetSimulation() {
+
+        const traffictableBody = document.getElementById("trafficDataTable").getElementsByTagName("tbody")[0];
+        traffictableBody.innerHTML = ''; // Clear the traffic data table body
+
+
+        const drivertableBody = document.getElementById("driverStateDataTable").getElementsByTagName("tbody")[0];
+        drivertableBody.innerHTML = ''; // Clear the driver state dat
+
+        // Send a reset command to the server via WebSocket
+        if (trafficSocket.readyState === WebSocket.OPEN) {
+            trafficSocket.send(JSON.stringify({ action: 'reset' }));
+        } else {
+            console.error('WebSocket is not open.');
+        }
+    }
+
     function clearData() {
         const traffictableBody = document.getElementById("trafficDataTable").getElementsByTagName("tbody")[0];
         traffictableBody.innerHTML = ''; // Clear the traffic data table body
@@ -109,7 +126,7 @@
     }
 
     // Optionally, clear data periodically
-    setInterval(clearData, 60000); // Clear data every 60 seconds
+    setInterval(clearAndResetSimulation, 60000); // Clear data every 60 seconds
 
     document.getElementById('startBtn').addEventListener('click', function() {
         clearData();

@@ -6,7 +6,7 @@ import random
 def simulate_driver_state(vehicle, distraction_level, drowsiness_level):
     control = vehicle.get_control()
 
-    # Adjust control based on distraction 
+    # Adjust control based on distraction
     if distraction_level > 0:
         control.steer += random.uniform(-0.1, 0.1) * distraction_level  # Simulate erratic steering
         control.throttle *= (1 - 0.1 * distraction_level)  # Simulate reduced attention to throttle

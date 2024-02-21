@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91aaf243-c1b8-40bb-b285-b7e0f0b0af40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/I2Connect/static/I2Connect/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/I2Connect/static/I2Connect/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenarios/carla.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenarios/road_layout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenarios/scenario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenarios/simulation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sensors/_init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sensors/driver_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sensors/timestamp_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/I2Connect/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/I2Connect/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMS/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/I2Connect/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/I2Connect/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/I2Connect/templates/I2Connect/traffic_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/I2Connect/templates/I2Connect/traffic_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sensors/traffic_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sensors/traffic_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/I2Connect/static/I2Connect/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/I2Connect/static/I2Connect/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenarios/carla.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scenarios/carla.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sensors/driver_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sensors/driver_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/I2Connect/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/I2Connect/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
