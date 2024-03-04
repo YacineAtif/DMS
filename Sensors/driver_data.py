@@ -1,10 +1,18 @@
 import random
 import time
+
+# from Scenarios.carla import distraction
 from Sensors.timestamp_util import get_current_timestamp
+from Database.db_utils import connect_to_database, close_connection_to_database, \
+    insert_driver_state_data
+
+conn = None
 
 
 class SmartEyeSimulator:
     def __init__(self):
+        global conn
+        conn = connect_to_database()
         self.distraction = 0
         self.drowsiness = 0
 
@@ -25,6 +33,7 @@ class SmartEyeSimulator:
     def get_data(self):
         # Return the current state along with a timestamp
         timestamp = get_current_timestamp()
+        insert_driver_state_data(conn, timestamp, self.distraction, self.drowsiness)
         return {
             "timestamp": timestamp,
             "distraction": self.distraction,
@@ -47,10 +56,14 @@ def get_updated_driver_state_data(reset=False):
 
 # Standalone execution
 if __name__ == "__main__":
-    for _ in range(30):
-        # Simulate and print driver state data
-        print(get_updated_driver_state_data())
-        time.sleep(1)
+    conn = connect_to_database()
+    if conn is not None:
+        for _ in range(30):
+            # Simulate and print driver state data
+            print(get_updated_driver_state_data())
+            time.sleep(1)
+        close_connection_to_database(conn)
+
     # Example of resetting the simulation
-    print("\nResetting simulation...\n")
-    print(get_updated_driver_state_data(reset=True))
+    # print("\nResetting simulation...\n")
+    # print(get_updated_driver_state_data(reset=True))
